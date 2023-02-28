@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tugas1c</title>
     <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             text-align: center;
             font-size: 30px;
@@ -16,7 +22,7 @@
             width: 100px;
             height: 100px;
             background-color: red;
-            border: solid 1px black
+            border: 1px solid black;
         }
 
         .k23 {

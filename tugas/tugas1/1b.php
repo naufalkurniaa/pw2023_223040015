@@ -17,6 +17,8 @@
     <title>Tugas1b</title>
 </head>
 <body>
+
+<!-- simbol (=) pada php yaitu nilai yang kanan dimasukkan ke dalam nilai yang kiri -->
     
 <p>
     <?php 
@@ -24,19 +26,19 @@
     ?>
 
     <?php
-        echo "Jika aku dikali 5, maka aku sekarang menjadi <b>$hasilkali</b> </br>";   
+        echo "Jika aku dikali 5, maka aku sekarang menjadi <b> " . ($a *= 5) . "</b> <br>";   
     ?>
 
     <?php
-        echo "Jika aku dibagi 2, maka aku sekarang menjadi <b>$hasilbagi</b> </br>";
+        echo "Jika aku dibagi 2, maka aku sekarang menjadi <b> " . ($a /= 2) . "</b> <br>";
     ?>
 
     <?php
-        echo "Jika aku ditambah 75, maka aku sekarang menjadi <b>$hasiltambah</b> </br>";
+        echo "Jika aku ditambah 75, maka aku sekarang menjadi <b> " . ($a += 75) . "</b> <br>";
     ?>
 
     <?php
-        echo "Jika aku dikurang 20, maka aku sekarang menjadi <b>$hasilkurang</b>";
+        echo "Jika aku dikurang 20, maka aku sekarang menjadi <b> " . ($a -= 20) . "</b> ,<br>";
     ?>
 </p>
 

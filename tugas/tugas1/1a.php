@@ -5,7 +5,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +21,26 @@
     ?>
     </i>
 </h2>
+
+<h2><i>
+   "<?php
+        echo "$a saya $b, $b $a saya.";
+    ?>"
+    </i>
+</h2>
+
+<h2><i>
+    "<?php
+       echo $a . ' saya ' . $b . ', ' . $b .' '. $a . ' saya.';
+    ?>"
+    </i>
+</h2>
+
+<?php 
+    $nama_depan = 'Naufal';
+    $nama_belakang = 'Kurnia';
+    echo $nama_depan .' '. $nama_belakang;
+?>
 
 </body>
 </html> 
