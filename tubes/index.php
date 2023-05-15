@@ -6,7 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MenitNews</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <style>
+      .card-title:hover {
+         color: green;
+       }
+
+       .nav-link:hover {
+         color: green;
+       }
+
+       .footer-link:hover {
+        color: green !important;
+      }
+
+    </style>
 </head>
 <body class="bg-body-secondary">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
@@ -163,10 +176,10 @@
       <div class="col-md-4">
         <h6>Menu</h6>
         <ul class="list-unstyled">
-          <li><a href="index.php" class="text-white text-decoration-none">Home</a></li>
-          <li><a href="berita.php" class="text-white text-decoration-none">Berita</a></li>
-          <li><a href="health.php" class="text-white text-decoration-none">Health</a></li>
-          <li><a href="food.php" class="text-white text-decoration-none">Food</a></li>
+          <li><a href="index.php" class="text-white text-decoration-none footer-link">Home</a></li>
+          <li><a href="berita.php" class="text-white text-decoration-none footer-link">Berita</a></li>
+          <li><a href="health.php" class="text-white text-decoration-none footer-link">Health</a></li>
+          <li><a href="food.php" class="text-white text-decoration-none footer-link">Food</a></li>
         </ul>
       </div>
       <div class="col-md-4 text-start">
