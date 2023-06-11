@@ -1,3 +1,10 @@
+<?php
+require 'functions.php';
+$berita = query("SELECT * FROM dashboard_admin");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,22 +27,44 @@
         <hr class="bg-white">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link text-white mb-3" href="#">Insert</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white mb-3 href="#">Update</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white mb-3" href="#">Delete</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">Search</a>
+            <a class="nav-link text-white" href="dashboardadmin.php">Dashboard</a>
           </li>
         </ul>
       </div>
       <div class="col-md-10">
         <div class="content p-4">
-          <!-- Konten isi dari setiap menu akan ditampilkan di sini -->
+        <div class="container">
+     <div class="row mt-4">
+      <div class="col-md-12">
+        <a href="tambahberita.php"><button class="btn btn-dark float-end mb-3">Tambah berita</button></a>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Judul</th>
+              <th>Penulis</th>
+              <th>Konten</th>
+              <th>Tanggal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <?php foreach( $berita as $row) : ?>
+          <tbody>
+            <tr>
+              <td><?= $row["judul"]; ?></td>
+              <td><?= $row["penulis"]; ?></td>
+              <td><?= $row["konten"]; ?></td>
+              <td><?= $row["tanggal"]; ?></td>
+              <td>
+                <a href="update.php?id=<?= $row["id"]; ?>" class="text-decoration-none"><span class="text-danger">Update</span></a> |
+                <a href="hapus.php?id=<?= $row["id"]; ?>" class="text-decoration-none"><span class="text-danger" onclick="return confirm('yakin ingin menghapus data?');">Delete</span></a>
+              </td>
+            </tr>
+          </tbody>
+          <?php endforeach; ?>
+        </table>
+      </div>
+    </div>
+  </div>
         </div>
       </div>
     </div>

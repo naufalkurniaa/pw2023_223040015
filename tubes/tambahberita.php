@@ -1,23 +1,19 @@
 <?php 
 require 'functions.php';
 
-$id = $_GET["id"];
-
-$berita = query("SELECT * FROM dashboard_admin WHERE id = $id")[0];
-
 if (isset($_POST["submit"])) {
 
-    if( ubah($_POST) > 0) {
+    if(tambah ($_POST) > 0) {
         echo "
         <script>
-            alert('data berhasil diubah');
+            alert('data berhasil ditambahkan');
             document.location.href = 'dashboardadmin.php';
         </script>
         ";
     }else {
             echo "
             <script>
-                alert('data gagal diubah');
+                alert('data gagal ditambahkan');
                 document.location.href = 'dashboardadmin.php';
             </script>
             ";
@@ -37,6 +33,11 @@ if (isset($_POST["submit"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update data Berita</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        .nav-link:hover {
+            color: green !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -54,30 +55,29 @@ if (isset($_POST["submit"])) {
         </ul>
      </div>
      <div class="col-md-8 mt-5 ms-5">
-    <h2>Update Berita</h2>
-    <form action="" method="POST">
-        <input type="hidden" name="id" value="<?= $berita["id"]; ?>">
+    <h2>Tambah Berita</h2>
+    <form action="tambahberita.php" method="POST">
         <div class="mb-3 mt-3">
             <label for="judul" class="form-label">Judul</label>
-            <input type="text" id="judul" name="judul" class="form-control" required value="<?= $berita["judul"]; ?>">
+            <input type="text" id="judul" name="judul" class="form-control" required>
         </div>
 
         <div class="mb-3">
             <label for="penulis" class="form-label">Penulis</label>
-            <input type="text" id="penulis" name="penulis" class="form-control" required value="<?= $berita["penulis"]; ?>">
+            <input type="text" id="penulis" name="penulis" class="form-control" required>
         </div>
 
         <div class="mb-3">
             <label for="konten" class="form-label">Konten</label>
-            <textarea id="konten" name="konten" class="form-control" required><?= $berita["konten"]; ?></textarea>
+            <textarea id="konten" name="konten" class="form-control" required></textarea>
         </div>
 
         <div class="mb-3">
             <label for="tanggal" class="form-label">Tanggal</label>
-            <input type="date" id="tanggal" name="tanggal" class="form-control" required value="<?= $berita["tanggal"]; ?>">
+            <input type="date" id="tanggal" name="tanggal" class="form-control" required>
         </div>
 
-        <button type="submit" name="submit" class="btn btn-dark">Update Berita</button>
+        <button type="submit" name="submit" class="btn btn-dark">Submit Berita</button>
     </form>
     </div>
     </div>
