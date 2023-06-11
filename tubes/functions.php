@@ -61,7 +61,17 @@ function ubah($data) {
 }
 
 
+function cari ($keyword) {
+    $query = "SELECT * FROM dashboard_admin
+              WHERE
+                judul LIKE '%$keyword%' OR
+                penulis LIKE '%$keyword%' OR
+                konten LIKE '%$keyword%' OR
+                tanggal LIKE '%$keyword%'
+              ";
 
+    return query($query);
+}
 
 
 

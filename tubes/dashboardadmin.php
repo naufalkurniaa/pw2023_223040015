@@ -2,6 +2,12 @@
 require 'functions.php';
 $berita = query("SELECT * FROM dashboard_admin");
 
+
+if ( isset($_POST["cari"])) {
+    $berita = cari($_POST["keyword"]);
+}
+
+
 ?>
 
 
@@ -31,12 +37,20 @@ $berita = query("SELECT * FROM dashboard_admin");
           </li>
         </ul>
       </div>
-      <div class="col-md-10">
-        <div class="content p-4">
+    <div class="col-md-10">
+      <div class="content p-4">
         <div class="container">
-     <div class="row mt-4">
-      <div class="col-md-12">
-        <a href="tambahberita.php"><button class="btn btn-dark float-end mb-3">Tambah berita</button></a>
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <form action="" method="post">
+                <div class="input-group mb-3">
+                  <input type="text" name="keyword" class="form-control" placeholder="Masukkan kata kunci" autofocus autocomplete="off">
+                  <button class="btn btn-dark" type="submit" name="cari">Cari</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-12">
+              <a href="tambahberita.php"><button class="btn btn-dark float-end mb-3">Tambah berita</button></a>
         <table class="table">
           <thead>
             <tr>

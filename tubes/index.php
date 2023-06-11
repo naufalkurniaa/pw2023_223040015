@@ -57,7 +57,6 @@
 
 <div class="container">
   <div class="row">
-    <!-- Kolom Kiri -->
     <div class="col-md-7">
       <div class="card mb-3">
       <a href="headline.php"><img src="img/gambar1.jpg" class="card-img-top" alt="jalanan macet"></a>
@@ -124,7 +123,6 @@
     <div class="col-md-1"></div>
 
 
-    <!-- Kolom Kanan -->
     <div class="col-md-3">
       <div class="mb-4">
           <h2>Trending</h2>
