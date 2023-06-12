@@ -56,10 +56,15 @@ if (isset($_POST["submit"])) {
      </div>
      <div class="col-md-8 mt-5 ms-5">
     <h2>Tambah Berita</h2>
-    <form action="tambahberita.php" method="POST">
+    <form action="tambahberita.php" method="POST" enctype="multipart/form-data">
         <div class="mb-3 mt-3">
             <label for="judul" class="form-label">Judul</label>
             <input type="text" id="judul" name="judul" class="form-control" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="gambar" class="form-label">Gambar</label>
+            <input type="file" id="gambar" name="gambar" class="form-control" required>
         </div>
 
         <div class="mb-3">
@@ -76,6 +81,7 @@ if (isset($_POST["submit"])) {
             <label for="tanggal" class="form-label">Tanggal</label>
             <input type="date" id="tanggal" name="tanggal" class="form-control" required>
         </div>
+
 
         <button type="submit" name="submit" class="btn btn-dark">Submit Berita</button>
     </form>

@@ -55,6 +55,7 @@ if ( isset($_POST["cari"])) {
           <thead>
             <tr>
               <th>Judul</th>
+              <th>Gambar</th>
               <th>Penulis</th>
               <th>Konten</th>
               <th>Tanggal</th>
@@ -65,6 +66,7 @@ if ( isset($_POST["cari"])) {
           <tbody>
             <tr>
               <td><?= $row["judul"]; ?></td>
+              <td><?= $row["gambar"]; ?></td>
               <td><?= $row["penulis"]; ?></td>
               <td><?= $row["konten"]; ?></td>
               <td><?= $row["tanggal"]; ?></td>

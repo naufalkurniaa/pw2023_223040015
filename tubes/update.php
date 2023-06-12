@@ -55,11 +55,18 @@ if (isset($_POST["submit"])) {
      </div>
      <div class="col-md-8 mt-5 ms-5">
     <h2>Update Berita</h2>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $berita["id"]; ?>">
+        <input type="hidden" name="gambarLama" value="<?= $berita["gambar"]; ?>">
         <div class="mb-3 mt-3">
             <label for="judul" class="form-label">Judul</label>
             <input type="text" id="judul" name="judul" class="form-control" required value="<?= $berita["judul"]; ?>">
+        </div>
+
+        <div class="mb-3">
+            <label for="gambar" class="form-label d-block">Gambar</label>
+            <img src="img/<?= $berita['gambar']; ?>" alt="" width="300">
+            <input type="file" id="gambar" name="gambar" class="form-control">
         </div>
 
         <div class="mb-3">
@@ -76,6 +83,7 @@ if (isset($_POST["submit"])) {
             <label for="tanggal" class="form-label">Tanggal</label>
             <input type="date" id="tanggal" name="tanggal" class="form-control" required value="<?= $berita["tanggal"]; ?>">
         </div>
+
 
         <button type="submit" name="submit" class="btn btn-dark">Update Berita</button>
     </form>
