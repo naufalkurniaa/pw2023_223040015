@@ -1,15 +1,49 @@
+<?php 
+require 'functions.php';
+$berita = query("SELECT * FROM dashboard_admin");
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $beritaDetail = null;
+            foreach ($berita as $item) {
+                if ($item['id'] == $id) {
+                    $beritaDetail = $item;
+                    break;
+                }
+  }
+}  
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>MenitNews</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <style>
+      .card-title:hover {
+         color: green;
+       }
+
+       .nav-link:hover {
+         color: green;
+       }
+
+       .footer-link:hover {
+        color: green !important;
+      }
+
+    </style>
 </head>
 <body class="bg-body-secondary">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">MenitNews</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +66,7 @@
       </ul>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item me-2">
-          <a class="nav-link bg-success rounded-3 px-3 mb-2 mb-lg-0" href="#">Login</a>
+          <a class="nav-link bg-success rounded-3 px-3 mb-2 mb-lg-0" href="login.php">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link bg-success rounded-3 px-3 mb-lg-0" href="daftar.php">Daftar</a>
@@ -42,31 +76,39 @@
   </div>
 </nav>
 
-<div class="container loginform rounded-4 mt-5 bg-success-subtle p-4 bayangan mb-5">
-  <h2 class="text-center mb-4">Login</h2>
-  <div class="row justify-content-center">
-    <div class="col-lg-6 d-flex flex-column flex-grow-1">
-      <form>
-        <div class="mb-3">
-          <label for="username" class="form-label">Username</label>
-          <input type="text" class="form-control" id="username" name="username">
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" name="password">
-        </div>
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <button type="submit" class="btn btn-success">Login</button>
-          <div>
-            <small>Belum punya akun?</small>
-            <a href="daftar.php" class="ms-2 text-decoration-none text-success">Daftar</a>
-          </div>
-        </div>
-      </form>
-      <a href="#" class="d-block text-center mt-3 text-decoration-none text-success">Kembali ke halaman utama</a>
-    </div>
+
+<div class="row">
+ <?php if ($beritaDetail): ?>
+  <div class="container col-md-6">
+    <h1 class="text-start mb-3"><?= $beritaDetail['judul']; ?></h1>
+    <p class="text-start mb-0">MenitNews - <?= $beritaDetail['tanggal']; ?></p>
+    <img src="img/<?= $beritaDetail['gambar']; ?>" class="img-fluid my-3" width="800" height="400" alt="Gambar Berita">
+    <p class="text-start">Penulis: <?= $beritaDetail['penulis']; ?></p>
+    <?php 
+    $konten = $beritaDetail['konten'];
+    $paragraf = explode("\n", $konten);
+    foreach ($paragraf as $p) {
+      echo "<p class='text-start'>$p</p>";
+    }
+  ?>
   </div>
+ <?php else: ?>
+    <p>Berita tidak ditemukan.</p>
+ <?php endif; ?>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <footer class="bg-dark text-white py-4">
   <div class="container">
@@ -77,10 +119,10 @@
       <div class="col-md-4">
         <h6>Menu</h6>
         <ul class="list-unstyled">
-        <li><a href="index.php" class="text-white text-decoration-none">Home</a></li>
-          <li><a href="berita.php" class="text-white text-decoration-none">Berita</a></li>
-          <li><a href="health.php" class="text-white text-decoration-none">Health</a></li>
-          <li><a href="food.php" class="text-white text-decoration-none">Food</a></li>
+          <li><a href="index.php" class="text-white text-decoration-none footer-link">Home</a></li>
+          <li><a href="berita.php" class="text-white text-decoration-none footer-link">Berita</a></li>
+          <li><a href="health.php" class="text-white text-decoration-none footer-link">Health</a></li>
+          <li><a href="food.php" class="text-white text-decoration-none footer-link">Food</a></li>
         </ul>
       </div>
       <div class="col-md-4 text-start">
@@ -96,8 +138,6 @@
     </div>
   </div>
 </footer>
-
-
 
 
 

@@ -71,7 +71,7 @@ function upload() {
     return $namaFileBaru;
 }
 
-
+    
 
 function hapus($id) {
     global $conn;

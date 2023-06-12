@@ -1,3 +1,12 @@
+<?php 
+require 'functions.php';
+$berita = query("SELECT * FROM dashboard_admin");
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,64 +66,24 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-7">
-      <div class="card mb-3">
-      <a href="headline.php"><img src="img/gambar1.jpg" class="card-img-top" alt="jalanan macet"></a>
-        <div class="card-body">
-          <a href="headline.php" class="text-decoration-none text-black"><h5 class="card-title">Hindari Macet, Pemerintah Imbau Masyarakat Mulai Mudik Akhir Pekan Ini</h5></a>
+      <div class="col-md-7">
+        <div class="card mb-3">
+          <a href="headline.php"><img src="img/gambar1.jpg" class="card-img-top" alt="jalanan macet"></a>
+          <div class="card-body">
+            <a href="headline.php" class="text-decoration-none text-black"><h5 class="card-title">Hindari Macet, Pemerintah Imbau Masyarakat Mulai Mudik Akhir Pekan Ini</h5></a>
+          </div>
         </div>
-      </div>
-      <div class="row">
+        <div class="row">
+        <?php foreach ($berita as $brt) : ?>
         <div class="col-md-4">
           <div class="card mb-3">
-            <a href="buah.php"><img src="img/gambar2.jpg" class="card-img-top" alt="buah semangka"></a>
+            <a href="details.php?id=<?= $brt['id']; ?>"><img src="img/<?= $brt["gambar"]; ?>" class="card-img-top"></a>
             <div class="card-body">
-              <a href="buah.php" class="text-decoration-none text-black"><h5 class="card-title">Rekomendasi Buah Yang Bagus Untuk Sahur Dan Buka Puasa</h5></a>
+              <a href="details.php?id=<?= $brt['id']; ?>" class="text-decoration-none text-black"><h5 class="card-title"><?= $brt["judul"]; ?></h5></a>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <a href="bibir.php"><img src="img/gambar3.jpg" class="card-img-top" alt="bibir kering"></a>
-            <div class="card-body">
-              <a href="bibir.php" class="text-decoration-none text-black"><h5 class="card-title">11 Penyebab Bibir Kering Dan Mengelupas Yang Perlu Diketahui</h5></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <a href="lebaran.php"><img src="img/gambar4.jpg" class="card-img-top" alt="tni"></a>
-            <div class="card-body">
-              <a href="lebaran.php" class="text-decoration-none text-black"><h5 class="card-title">Lebaran, KSAL: Kapal Patroli Maritim Tidak Akan Dikurangi untuk Cegah Penyelundupan</h5></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <a href="alek.php"><img src="img/gambar8.jpg" class="card-img-top" alt="foto alex"></a>
-            <div class="card-body">
-              <a href="alek.php" class="text-decoration-none text-black"><h5 class="card-title">Kisah Alek, Warga Bogor yang Merantau di Pasar Koja Demi Jual Amplop Lebaran</h5></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <a href="zinc.php"><img src="img/gambar9.jpg" class="card-img-top" alt="tubuh kelebihan seng"></a>
-            <div class="card-body">
-              <a href="zinc.php" class="text-decoration-none text-black"><h5 class="card-title">Tanda-tanda Tubuh Kelebihan Seng yang Perlu Diperhatikan</h5></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <a href="cornflakes.php"><img src="img/gambar10.jpg" class="card-img-top" alt="cornflake cookies"></a>
-            <div class="card-body">
-              <a href="cornflakes.php" class="text-decoration-none text-black"><h5 class="card-title">Resep Cornflakes Cookies, Kue Kering Renyah Cepat Bikinnya</h5></a>
-            </div>
-          </div>
-        </div>
+      <?php endforeach; ?>
       </div>
     </div>
 

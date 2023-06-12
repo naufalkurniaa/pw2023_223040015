@@ -31,12 +31,12 @@ if (isset($_POST["submit"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update data Berita</title>
+    <title>Tambah Berita</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <style>
-        .nav-link:hover {
-            color: green !important;
-        }
+        .margin {
+            margin-left: 260px !important;
+         }
     </style>
 </head>
 
@@ -45,7 +45,7 @@ if (isset($_POST["submit"])) {
     <!-- Tampilkan formulir untuk menambah berita -->
     <div class="container-fluid">
     <div class="row">
-     <div class="col-md-2 bg-dark text-white" style="height: 100vh;">
+     <div class="col-md-2 bg-dark text-white fixed-top" style="height: 100vh;">
         <a href="index.php" class="text-decoration-none text-white"><h1 class="display-6 mt-3">MenitNews</h1></a>
         <hr class="bg-white">
         <ul class="nav flex-column">
@@ -54,7 +54,7 @@ if (isset($_POST["submit"])) {
           </li>
         </ul>
      </div>
-     <div class="col-md-8 mt-5 ms-5">
+     <div class="col-md-8 mt-5 ms-5 margin">
     <h2>Tambah Berita</h2>
     <form action="tambahberita.php" method="POST" enctype="multipart/form-data">
         <div class="mb-3 mt-3">
