@@ -22,6 +22,7 @@ if ( isset($_POST["cari"])) {
     .margin {
       margin-left: 225px;
     }
+
    </style> 
 </head>
 <body>

@@ -56,14 +56,14 @@
           <input type="password" class="form-control" id="password" name="password">
         </div>
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <button type="submit" class="btn btn-success">Login</button>
+        <button type="submit" class="btn btn-success">Login</button>
           <div>
             <small>Belum punya akun?</small>
             <a href="daftar.php" class="ms-2 text-decoration-none text-success">Daftar</a>
           </div>
         </div>
       </form>
-      <a href="#" class="d-block text-center mt-3 text-decoration-none text-success">Kembali ke halaman utama</a>
+      <a href="index.php" class="d-block text-center mt-3 text-decoration-none text-success">Kembali ke halaman utama</a>
     </div>
   </div>
 </div>

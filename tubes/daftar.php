@@ -71,7 +71,7 @@
           </div>
         </div>
       </form>
-      <a href="#" class="d-block text-center mt-3 text-decoration-none text-success">Kembali ke halaman utama</a>
+      <a href="index.php" class="d-block text-center mt-3 text-decoration-none text-success">Kembali ke halaman utama</a>
     </div>
   </div>
 </div>
